@@ -1,7 +1,6 @@
 class CreateFittings < ActiveRecord::Migration[7.1]
   def change
     create_table :fittings do |t|
-      t.integer :fitting_id
       t.integer :height
       t.integer :weight
       t.integer :neck_round

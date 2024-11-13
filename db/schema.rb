@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_11_06_074332) do
   create_table "fittings", force: :cascade do |t|
-    t.integer "fitting_id"
     t.integer "height"
     t.integer "weight"
     t.integer "neck_round"
@@ -27,22 +26,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_06_074332) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "product_id"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "schools", force: :cascade do |t|
-    t.integer "school_id"
     t.string "school_name"
-    t.string "school_grade"
+    t.integer "school_grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
-    t.integer "student_id"
     t.integer "school_id"
     t.string "student_name"
     t.integer "product_id"

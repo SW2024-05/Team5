@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-    has_one :school
-    has_one :fitting
-    has_one :product
+    belongs_to :school
+    belongs_to :fitting
+    belongs_to :product
 end

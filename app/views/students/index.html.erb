@@ -1,0 +1,6 @@
+<h1>Students#index</h1>
+<h5>
+    <% @Students.each do |s| %>
+        <%= link_to s.student_name,"students/#{s.id}"%><br/>
+    <% end %>
+</h5>

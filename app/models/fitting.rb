@@ -1,3 +1,3 @@
 class Fitting < ApplicationRecord
-    belongs_to :student
+    has_one :student
 end

@@ -1,3 +1,3 @@
 class School < ApplicationRecord
-    belongs_to :student
+    has_many :student
 end

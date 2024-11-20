@@ -1,0 +1,43 @@
+<h1>登録</h1>
+<p>学校：<%= @student.school.school_name %></p>
+<p>名前：<%= @student.student_name %></p>
+<p>制服タイプ： <%= @student.product.product_type %> </p>
+    
+<%= form_with model: @fitting do |f| %>
+  
+  <p>
+    <%= f.label :height, '身長' %>　　
+    <%= f.text_field :height %>  
+    　　
+    <%= f.label :weight, '体重' %>　
+    <%= f.text_field :weight %>
+  </p>
+  
+  <p>
+    <%= f.label :neck_round, '首回り' %>　
+    <%= f.text_field :neck_round %>
+    　　
+    <%= f.label :shoulder_width, '肩幅' %>　
+    <%= f.text_field :shoulder_width %>
+    　　
+    <%= f.label :chest_size, '胸囲' %>　　
+    <%= f.text_field :chest_size %>
+    　　
+    <%= f.label :sleeve_length, '袖丈' %>
+    <%= f.text_field :sleeve_length %>
+  </p>
+  
+  <p>
+    <%= f.label :west, 'ウエスト' %>
+    <%= f.text_field :west %>
+    　　
+<!--if '制服タイプ'=='Ⅰ' --> 
+    <%= f.label :hip, 'ヒップ' %>
+    <%= f.text_field :hip %>
+    　　
+    <%= f.label :foot_length, '足の長さ' %>
+    <%= f.text_field :foot_length %>
+  </p>
+  
+  <%= f.submit '登録' %>
+<% end %>

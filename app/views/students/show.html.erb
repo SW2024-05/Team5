@@ -10,7 +10,7 @@
         商品タイプ：<%= @Student.product.product_type %>
     </span><br/>
     <span>
-        採寸情報：<%= button_to "データを編集する",{controller:'fittings',action:'new'},{method: :get} %><br/>
+        採寸情報：<%= link_to "データを編集する","/fittings/#{@Fitting.id}/edit" %><br/>
             身長：<%= @Fitting.height %><br/>
             体重：<%= @Fitting.weight %><br/>
             首周り：<%= @Fitting.neck_round %><br/>

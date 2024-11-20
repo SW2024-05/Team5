@@ -1,22 +1,20 @@
 class FittingsController < ApplicationController
-  def index
-    @fittings = Fitting.all
+  def edit
+    @fitting = Fitting.find(params[:id])
+    @student = Student.find(@fitting.id)
   end
   
-  def new
-    @fitting = Fitting.new
-  end
-  
-  def create
-    fitting = Fitting.new(
-      school: params[:fitting][:school], name: params[:fitting][:name],
+  def update
+    fitting =Fitting.find(params[:id])
+    fitting.update(
       height: params[:fitting][:height], weight: params[:fitting][:weight],
-      neck: params[:fitting][:neck], shoulder: params[:fitting][:shoulder],
-      chest: params[:fitting][:chest], sleeve: params[:fitting][:sleeve],
+      neck_round: params[:fitting][:neck_round], shoulder_width: params[:fitting][:shoulder_width],
+      chest_size: params[:fitting][:chest_size], sleeve_length: params[:fitting][:sleeve_length],
       west: params[:fitting][:west], hip: params[:fitting][:hip],
-      foot: params[:fitting][:foot]
+      foot_length: params[:fitting][:foot_length]
       )
     fitting.save
+    redirect_to "/students/#{fitting.student.id}"
   end
   
 end

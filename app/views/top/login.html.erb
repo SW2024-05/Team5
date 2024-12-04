@@ -1,9 +1,13 @@
-<h1>ログイン</h1>
-
-<%= form_with url: '/top/login', method: :post, local: true do |f| %>
+<div class="container">
+  <h1 class="title">注文情報を参照する</h1>
+  
+  <%= form_with url: '/top/login', method: :post, local: true do |f| %>
     <p>
-      <%= f.label :student_id, '学生ID' %>
-      <%= f.text_field :student_id %>
+      <%= f.label :student_id, '学生IDを入力してください' %>
+      <%= f.text_field :student_id, class: "stu-id" %>
     </p>
-    <%= f.submit '参照' %>
-<% end %>
+
+      <%= f.submit '参照', class: "button" %>
+      
+  <% end %>
+</div>

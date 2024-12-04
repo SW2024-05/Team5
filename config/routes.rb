@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   get 'top/show'
   post 'top/log'
-  root 'top#show'
+  root 'top#login'
 
 end

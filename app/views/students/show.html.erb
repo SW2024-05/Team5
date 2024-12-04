@@ -1,24 +1,25 @@
-<h1>Students#Show</h1>
+<h1>ユーザー詳細</h1>
 <h5>
+    <%= link_to "戻る" , root_path %><br/>
     <span>
-    名前：<%= @Student.student_name %>
+    名前：<%= @student.student_name %>
     </span><br/>
     <span>
-        所属：<%= @Student.school.school_name %>
+        所属：<%= @student.school.school_name %>
     </span><br/>
     <span>
-        商品タイプ：<%= @Student.product.product_type %>
+        商品タイプ：<%= @student.product.product_type %>
     </span><br/>
     <span>
-        採寸情報：<%= link_to "データを編集する","/fittings/#{@Fitting.id}/edit" %><br/>
-            身長：<%= @Fitting.height %><br/>
-            体重：<%= @Fitting.weight %><br/>
-            首周り：<%= @Fitting.neck_round %><br/>
-            肩幅：<%= @Fitting.shoulder_width %><br/>
-            胸囲<%= @Fitting.chest_size %><br/>
-            袖丈：<%= @Fitting.sleeve_length %><br/>
-            ウエスト：<%= @Fitting.west %><br/>
-            ヒップ<%= @Fitting.hip %><br/>
-            足の長さ：<%= @Fitting.foot_length %><br/>
+        採寸情報：<%= link_to "データを編集する","/fittings/#{@fitting.id}/edit" %><br/>
+            身長：<%= @fitting.height ||="" %><br/>
+            体重：<%= @fitting.weight ||="" %><br/>
+            首周り：<%= @fitting.neck_round ||="" %><br/>
+            肩幅：<%= @fitting.shoulder_width ||="" %><br/>
+            胸囲<%= @fitting.chest_size ||="" %><br/>
+            袖丈：<%= @fitting.sleeve_length ||="" %><br/>
+            ウエスト：<%= @fitting.west ||="" %><br/>
+            ヒップ<%= @fitting.hip ||="" %><br/>
+            足の長さ：<%= @fitting.foot_length ||="" %><br/>
     </span><br/>
 </h5>

@@ -1,25 +1,54 @@
-<h1>ユーザー詳細</h1>
-<h5>
-    <%= link_to "戻る" , root_path %><br/>
-    <span>
-    名前：<%= @student.student_name %>
-    </span><br/>
-    <span>
-        所属：<%= @student.school.school_name %>
-    </span><br/>
-    <span>
-        商品タイプ：<%= @student.product.product_type %>
-    </span><br/>
-    <span>
-        採寸情報：<%= link_to "データを編集する","/fittings/#{@fitting.id}/edit" %><br/>
-            身長：<%= @fitting.height ||="" %><br/>
-            体重：<%= @fitting.weight ||="" %><br/>
-            首周り：<%= @fitting.neck_round ||="" %><br/>
-            肩幅：<%= @fitting.shoulder_width ||="" %><br/>
-            胸囲<%= @fitting.chest_size ||="" %><br/>
-            袖丈：<%= @fitting.sleeve_length ||="" %><br/>
-            ウエスト：<%= @fitting.west ||="" %><br/>
-            ヒップ<%= @fitting.hip ||="" %><br/>
-            足の長さ：<%= @fitting.foot_length ||="" %><br/>
-    </span><br/>
-</h5>
+<h1 class="title"><%= @Student.student_name %>田中明彦様の生徒情報</h1>
+
+    <p>
+        名前：<%= @Student.student_name %>
+    </p>
+    <p>
+        学校名：<%= @Student.school.school_name %> 
+    </p>
+    <p>
+        身長：<%= @Fitting.height %>cm
+    </p>
+    <p>
+        体重：<%= @Fitting.weight %>kg
+    </p>
+    <p>
+        商品タイプ：<%= @Student.product.product_type %>
+    </p>
+    
+    <br/>
+    
+    <h2>-- 採寸情報 --</h2>
+    
+    <table class="fitting">
+        <tr>
+            <th>首周り</th>
+            <td><%= @Fitting.neck_round ||="" %>cm</td>
+        </tr>
+        <tr>
+            <th>肩幅</th>
+            <td><%= @Fitting.shoulder_width ||="" %>cm</td>
+        </tr>
+        <tr>
+            <th>胸囲</th>
+            <td><%= @Fitting.chest_size ||="" %>cm</td>
+        </tr>
+        <tr>
+            <th>袖丈</th>
+            <td><%= @Fitting.sleeve_length ||="" %>cm</td>
+        </tr>
+        <tr>
+            <th>ウエスト</th>
+            <td><%= @Fitting.west ||="" %>cm</td>
+        </tr>
+        <tr>
+            <th>ヒップ</th>
+            <td><%= @Fitting.hip ||="" %>cm</td>
+        </tr>
+        <tr>
+            <th>足の長さ</th>
+            <td><%= @Fitting.foot_length ||="" %>cm</td>
+        </tr>
+    </table>
+    
+    <%= link_to "データを編集する","/fittings/#{@Fitting.id}/edit" %>

@@ -1,0 +1,51 @@
+<h2>学生新規追加</h2>
+
+
+<%= form_with model: @student, local: true do |f| %>
+    
+    学生名：<%= f.text_field :student_name%><br/>
+    <div>
+        <!-- モーダル部分 -->
+        <div id="known-school-modal" style="display: none;">
+            学校：<%= f.collection_select :school_id , @school, :id, :school_name, { include_blank: "選択してください" } %>
+            <button type="button" id="new-group-btn" class="btn btn-link">学校新規</button>
+        </div>
+        
+        <div id="unknown-school-modal" style="display: block;">
+            学校名：<%= f.text_field :school_name %>
+            　学年：<%= f.number_field :school_grade %>
+            <button type="button" id="close-modal-btn" class="btn btn-link">登録済みの学校から選ぶ</button>
+        </div>
+    </div>
+    
+    
+    注文商品：<%= f.collection_select :product_id, @product,:id ,:product_type , { include_blank: "選択してください" }%>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const modal_a = document.getElementById("known-school-modal");
+  const modal_b = document.getElementById("unknown-school-modal");
+  
+  const newGroupBtn = document.getElementById("new-group-btn");
+  const closeModalBtn = document.getElementById("close-modal-btn");
+  const newGroupForm = document.getElementById("new-group-form");
+  const groupSelect = document.querySelector("select[name='user[group_id]']");
+
+  newGroupBtn.addEventListener("click", () => {
+        modal_a.style.display = "none";
+        modal_b.style.display = "block";
+  });
+
+  closeModalBtn.addEventListener("click", () => {
+        modal_a.style.display = "block";
+        modal_b.style.display = "none";
+  });
+
+});
+
+</script>
+

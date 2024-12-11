@@ -23,33 +23,32 @@
     <table class="fitting">
         <tr>
             <th>首周り</th>
-            <td><%= @Fitting.neck_round %>cm</td>
+            <td><%= @Fitting.neck_round ||="" %>cm</td>
         </tr>
         <tr>
             <th>肩幅</th>
-            <td><%= @Fitting.shoulder_width %>cm</td>
+            <td><%= @Fitting.shoulder_width ||="" %>cm</td>
         </tr>
         <tr>
             <th>胸囲</th>
-            <td><%= @Fitting.chest_size %>cm</td>
+            <td><%= @Fitting.chest_size ||="" %>cm</td>
         </tr>
         <tr>
             <th>袖丈</th>
-            <td><%= @Fitting.sleeve_length %>cm</td>
+            <td><%= @Fitting.sleeve_length ||="" %>cm</td>
         </tr>
         <tr>
             <th>ウエスト</th>
-            <td><%= @Fitting.west %>cm</td>
+            <td><%= @Fitting.west ||="" %>cm</td>
         </tr>
         <tr>
             <th>ヒップ</th>
-            <td><%= @Fitting.hip %>cm</td>
+            <td><%= @Fitting.hip ||="" %>cm</td>
         </tr>
         <tr>
             <th>足の長さ</th>
-            <td><%= @Fitting.foot_length %>cm</td>
+            <td><%= @Fitting.foot_length ||="" %>cm</td>
         </tr>
     </table>
     
     <%= link_to "データを編集する","/fittings/#{@Fitting.id}/edit" %>
-

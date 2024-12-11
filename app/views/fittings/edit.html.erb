@@ -5,7 +5,7 @@
 <p>制服タイプ：<%= @student.product.product_type %></p>
     
 <%= form_with model: @fitting do |f| %>
-  
+
   <table class="fitting">
     <tr>
       <th><%= f.label :height, '身長' %></th>
@@ -46,4 +46,5 @@
   </table>
   <br/>
   <%= f.submit '登録', class: "regist" %>
+
 <% end %>

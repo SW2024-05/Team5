@@ -1,64 +1,60 @@
-<h1><%= @student.student_name %>様の注文情報</h1>
+<h1 class="title">田中明彦様の注文情報</h1>
+<!-- %= @student.student_name % -->
 
-<p>制服タイプ：<%= @student.products.product_type %></p>
+<h2>制服タイプ：Ⅰ型</h2>
+<!-- %= @student.products.product_type % -->
 
-<% if @student.products.product_type == "Ⅰ型" %>
-    <table border="1">
-        <tr align="center">
+<!-- % if @student.products.product_type == "Ⅰ型" % -->
+    <table class="product">
+        <tr>
             <th>名前</th>
             <th>枚数</th>
             <th>値段（1着当たり）</th>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>カッターシャツ</td>
             <td>2</td>
             <td>30</td>
         </tr>
             
-        <tr align="center">
+        <tr>
             <td>ブレザー</td>
             <td>1</td>
             <td>150</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>冬用ズボン</td>
             <td>1</td>
             <td>100</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>セーター</td>
             <td>1</td>
             <td>90</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>ネクタイ</td>
             <td>1</td>
             <td>10</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>ソックス</td>
             <td>2</td>
             <td>3</td>
         </tr> 
         
         <tr>
-            <td>　</td>
-            <td>　</td>
-            <td>　</td>
-        </tr> 
-        
-        <tr align="center">
             <td>半袖カッターシャツ</td>
             <td>2</td>
             <td>30</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>夏用ズボン</td>
             <td>2</td>
             <td>100</td>
@@ -66,63 +62,57 @@
     </table>
     <br><br>
     
-<% else %>
-    <table border="1">
-        <tr align="center">
+<!-- % else % -->
+    <table class="product">
+        <tr>
             <th>名前</th>
             <th>枚数</th>
             <th>値段（1着当たり）</th>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>長袖ブラウス</td>
             <td>2</td>
             <td>30</td>
         </tr>
             
-        <tr align="center">
+        <tr>
             <td>ブレザー</td>
             <td>1</td>
             <td>150</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>冬用スカート</td>
             <td>1</td>
             <td>100</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>セーター</td>
             <td>1</td>
             <td>90</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>リボン</td>
             <td>1</td>
             <td>10</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>ソックス</td>
             <td>2</td>
             <td>3</td>
         </tr> 
-        
-        <tr align="center">
-            <td>　</td>
-            <td>　</td>
-            <td>　</td>
-        </tr> 
-        
-        <tr align="center">
+
+        <tr>
             <td>半袖ブラウス</td>
             <td>2</td>
             <td>30</td>
         </tr> 
         
-        <tr align="center">
+        <tr>
             <td>夏用スカート</td>
             <td>2</td>
             <td>100</td>

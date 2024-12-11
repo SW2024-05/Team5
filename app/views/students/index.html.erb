@@ -1,6 +1,13 @@
-<h1>Students#index</h1>
-<h5>
-    <% @Students.each do |s| %>
-        <%= link_to s.student_name,"students/#{s.id}"%><br/>
-    <% end %>
-</h5>
+<div class="container2">
+  
+  <h1 class="title">生徒一覧</h1>
+  
+  <ol class="stu-list">
+    <li>
+      <% @Students.each do |s| %>
+        <%= link_to s.student_name,"students/#{s.id}", class: "stu-name" %><br/>
+      <% end %>
+    </li>
+  </ol>
+
+</div>

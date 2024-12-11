@@ -2,9 +2,15 @@
 
 p{
     text-align: center;
+    color: #000000;
 }
 
-/*---------学生がログインするときの画面---------*/
+h2{
+    text-align: center;
+    color: #000000;
+}
+
+
 .title{
     color: #000000;
     font-size: 40px;
@@ -12,6 +18,22 @@ p{
     border-bottom: 1px solid #555;
 }
 
+.button{
+  display: block;
+  margin: auto;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #6495ed;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+/*-------top/login.html.erb(学生がログインするときの画面)--------*/
 .container{
     width: 600px;
     height: 300px;
@@ -31,17 +53,140 @@ p{
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+/*---------------------------------------------------------------*/
 
-.button{
+
+
+/*---------top/show.html.erb(学生が情報を見るときの画面)---------*/
+.product{
+    border-collapse: separate;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: auto;
+    padding: 0;
+    width: 55%;
+    box-shadow: 0 0 15px -6px #bbbbbb;
+}
+
+.product tr {
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+}
+
+.product tr:hover {
+    background-color: #ffffcc;
+}
+
+.product th, .product td {
+    padding: 20px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.product th {
+    width: 30%;
+    padding: 10px 0;
+    font-size: 18px;
+    padding: 15px;
+    background-color: #88ccff;
+    color:#ffffff;
+}
+
+/*---------------------------------------------------------------*/
+
+
+
+/*---students/index.html.erb(管理者が生徒一覧を見るときの画面)---*/
+
+.container2{
+    width: 600px;
+    margin: 0 auto;
+    padding: 50px; 
+    background-color: #cbefd3;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.stu-list{
+    width: 200px;
+    margin: auto;
+    font-size: 18px
+}
+
+.stu-name{
+    color: #000000;
+    text-decoration: none;
+}
+
+.stu-name:hover{
+    color: #555555;
+    text-decoration: underline;
+}
+
+/*---------------------------------------------------------------*/
+
+
+
+/*------student/show.html(管理者が学生情報を見るときの画面)------*/
+.fitting{
+    width: 50%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.fitting tr{
+    border-bottom: solid 2px #ffffff;
+}
+
+.fitting tr:last-child{
+    border-bottom: none;
+}
+
+.fitting th{
+    position: relative;
+    text-align: left;
+    width: 30%;
+    background-color: #99cc99;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.fitting th:after{
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top:calc(50% - 10px);
+    right:-10px;
+    border-left: 10px solid #99cc99;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.fitting td{
+    text-align: left;
+    width: 70%;
+    text-align: center;
+    background-color: #eeeeee;
+    padding: 10px 0;
+}
+/*---------------------------------------------------------------*/
+
+
+
+/*----fittings/edit.html(管理者が学生情報を登録するときの画面)----*/
+.regist{
   display: block;
   margin: auto;
   width: 200px;
   margin: 0 auto;
   padding: 10px;
-  background-color: #6495ed;
+  background-color: #669966;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-/*----------------------------------------------*/
+/*---------------------------------------------------------------*/

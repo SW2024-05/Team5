@@ -1,5 +1,6 @@
-<div class="container">
-  <h1 class="title">注文情報を参照する</h1>
+<h1 class="title">注文情報を参照する</h1>
+
+<div class="container-stu">
   
   <%= form_with url: '/top/login', method: :post, local: true do |f| %>
     <p>
@@ -7,7 +8,7 @@
       <%= f.text_field :student_id, class: "stu-id" %>
     </p>
 
-      <%= f.submit '参照', class: "button" %>
+      <%= f.submit '参照', class: "student-btn" %>
       
   <% end %>
 </div>

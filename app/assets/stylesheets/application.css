@@ -18,23 +18,10 @@ h2{
     border-bottom: 1px solid #555;
 }
 
-.button{
-  display: block;
-  margin: auto;
-  width: 200px;
-  margin: 0 auto;
-  padding: 10px;
-  background-color: #6495ed;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 
 
 /*-------top/login.html.erb(学生がログインするときの画面)--------*/
-.container{
+.container-stu{
     width: 600px;
     height: 300px;
     margin: 0 auto;
@@ -52,6 +39,19 @@ h2{
   margin:20px 30px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.student-btn{
+  display: block;
+  margin: auto;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #6495ed;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 /*---------------------------------------------------------------*/
 
@@ -98,7 +98,7 @@ h2{
 
 /*---students/index.html.erb(管理者が生徒一覧を見るときの画面)---*/
 
-.container2{
+.container-ad{
     width: 600px;
     margin: 0 auto;
     padding: 50px; 
@@ -123,6 +123,14 @@ h2{
     text-decoration: underline;
 }
 
+/*---------------------------------------------------------------*/
+
+
+
+/*------student/new.html(管理者が学生情報を見るときの画面)-------*/
+.school-btn{
+    text-align: center;
+}
 /*---------------------------------------------------------------*/
 
 
@@ -177,7 +185,7 @@ h2{
 
 
 /*----fittings/edit.html(管理者が学生情報を登録するときの画面)----*/
-.regist{
+.admin-btn{
   display: block;
   margin: auto;
   width: 200px;

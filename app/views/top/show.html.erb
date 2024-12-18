@@ -1,10 +1,8 @@
-<h1 class="title">田中明彦様の注文情報</h1>
-<!-- %= @student.student_name % -->
+<h1 class="title"><%= @student.student_name %>様の注文情報</h1>
 
-<h2>制服タイプ：Ⅰ型</h2>
-<!-- %= @student.products.product_type % -->
+<h2><%= @student.products.product_type %></h2>
 
-<!-- % if @student.products.product_type == "Ⅰ型" % -->
+<% if @student.products.product_type == "Ⅰ型" %>
     <table class="product">
         <tr>
             <th>名前</th>
@@ -62,7 +60,7 @@
     </table>
     <br><br>
     
-<!-- % else % -->
+<% else %>
     <table class="product">
         <tr>
             <th>名前</th>

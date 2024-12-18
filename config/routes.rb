@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   get 'top/show'
   post 'top/log'
-  root 'fittings#edit'
+  root 'students#new'
 
 end

@@ -16,6 +16,6 @@ Rails.application.routes.draw do
       post "find",to: "top#find" ,as:"find"
     end
   end
-  root 'students'
+  root "students#index"
 
 end

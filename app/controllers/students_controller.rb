@@ -13,42 +13,14 @@ class StudentsController < ApplicationController
       @school = School.all
       @product = Product.all
   end
-  # def create
-  #   @fitting = Fitting.new()
-  #   @fitting.save
-    
-  #   if !params[:student][:school_id]
-  #     school = School.new(
-  #       school_name: params[:student][:school_name],
-  #       school_grade: params[:student][:school_grade]
-  #     )
-  #     school.save
-      
-  #     school_id=school.id
-  #   else 
-  #     school_id=params[:student][:school_id]
-  #   end
-  #   @student = Student.new(
-  #     school_id: params[:student][:school_id] ,
-  #     student_name: school_id ,
-  #     product_id: params[:student][:product_id] ,
-  #     fitting_id: @fitting.id
-  #   )
-    
-  #   if @student.save
-  #     flash[:notice] = '1人追加しました'
-  #     redirect_to '/'
-  #   else
-  #     render 'new'
-  #   end
-  # end
+
   def create
     fitting = Fitting.new()
     fitting.save
     
     @student = Student.new(
       student_name: params[:student][:student_name] ,
-      product_id: params[:student][:product_id] ,
+      product_id: nil ,
       fitting_id: fitting.id
       )
 
@@ -67,9 +39,37 @@ class StudentsController < ApplicationController
     end
   end
 
+  def upload_csv
+    @school = School.all
+  end
+  
+  def import
+    if params[:school_name].present? && params[:school_id].blank?
+      school = School.create(school_name: params[:school_name], school_grade: params[:school_grade])
+      school_id = school.id
+    else
+      school_id = params[:school_id]
+    end
+    
+    Student.import(params[:file],school_id)
+    redirect_to students_path
+  end
+  
+  def search
+    @school = School.all
+  end
+  
+  def find
+    student = Student.find_by(student_name: params[:student_name])
+    redirect_to "/students/#{student.id}"
+    # redirect_to students_path
+  end
+  
   private
 
   def student_params
     params.require(:student).permit(:student_name, :school_id, :school_name, :school_grade, :product_id)
   end
+  
+  
 end

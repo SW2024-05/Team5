@@ -1,19 +1,19 @@
-<h1 class="title"><%= @Student.student_name %>様の生徒情報</h1>
+<h1 class="title"><%= @student.student_name %>様の生徒情報</h1>
 
     <p>
-        名前：<%= @Student.student_name %>
+        名前：<%= @student.student_name %>
     </p>
     <p>
-        学校名：<%= @Student.school.school_name %> 
+        学校名：<%= @student.school.school_name %> 
     </p>
     <p>
-        身長：<%= @Fitting.height %>cm
+        身長：<%= @fitting.height ||="未計測" %>cm
     </p>
     <p>
-        体重：<%= @Fitting.weight %>kg
+        体重：<%= @fitting.weight ||="未計測" %>kg
     </p>
     <p>
-        商品タイプ：<%= @Student.product.product_type %>
+        商品タイプ：<%= @student.product&.product_type ||='' %>
     </p>
     
     <br/>
@@ -23,32 +23,32 @@
     <table class="fitting">
         <tr>
             <th>首周り</th>
-            <td><%= @Fitting.neck_round ||="" %>cm</td>
+            <td><%= @fitting.neck_round ||="未計測" %>cm</td>
         </tr>
         <tr>
             <th>肩幅</th>
-            <td><%= @Fitting.shoulder_width ||="" %>cm</td>
+            <td><%= @fitting.shoulder_width ||="未計測" %>cm</td>
         </tr>
         <tr>
             <th>胸囲</th>
-            <td><%= @Fitting.chest_size ||="" %>cm</td>
+            <td><%= @fitting.chest_size ||="未計測" %>cm</td>
         </tr>
         <tr>
             <th>袖丈</th>
-            <td><%= @Fitting.sleeve_length ||="" %>cm</td>
+            <td><%= @fitting.sleeve_length ||="未計測" %>cm</td>
         </tr>
         <tr>
             <th>ウエスト</th>
-            <td><%= @Fitting.west ||="" %>cm</td>
+            <td><%= @fitting.west ||="未計測" %>cm</td>
         </tr>
         <tr>
             <th>ヒップ</th>
-            <td><%= @Fitting.hip ||="" %>cm</td>
+            <td><%= @fitting.hip ||="未計測" %>cm</td>
         </tr>
         <tr>
             <th>足の長さ</th>
-            <td><%= @Fitting.foot_length ||="" %>cm</td>
+            <td><%= @fitting.foot_length ||="未計測" %>cm</td>
         </tr>
     </table>
     
-    <%= link_to "データを編集する","/fittings/#{@Fitting.id}/edit" %>
+    <%= link_to "データを編集する","/fittings/#{@fitting.id}/edit" %>

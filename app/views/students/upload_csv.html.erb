@@ -1,14 +1,13 @@
-<h1 class="title">学生新規追加</h1>
+<h1 class="title">CSVインポート</h1>
 
-<%= form_with model: @student, local: true do |f| %>
+<%= form_with url: import_csv_students_path, local: true  do |f|%>
     <div class="container-ad">
-        <p>学生名：<%= f.text_field :student_name %></p>
-        <p>学年：<%= f.number_field :school_grade %></p>
         <div>
             <!-- モーダル部分 -->
-            <div id="known-school-modal" style="display: none;">
+            <%= f.file_field :file %>
+            <div id="known-school-modal" style="display: block;">
                 <p>
-                学校：<%= f.collection_select :school_id , @school, :id, :school_name,
+                学校：<%= f.collection_select :school_id , @school || [], :id, :school_name,
                 { include_blank: "選択してください" } %>
                 </p>
                 <div class="school-btn">
@@ -16,16 +15,14 @@
                 </div>
             </div>
             
-            <div id="unknown-school-modal" style="display: block;">
+            <div id="unknown-school-modal" style="display: none;">
                 <p>学校名：<%= f.text_field :school_name %></p>
                 <div class="school-btn">
                     <button type="button" id="close-modal-btn" >登録済みの学校から選ぶ</button>
                 </div>
             </div>
         </div>
-        
-        
-      <%= f.submit '作成', class: "admin-btn" %>
+      <%= f.submit 'インポート' class: "admin-btn" %>
     </div>
 <% end %>
 
@@ -52,4 +49,3 @@
 });
 
 </script>
-

@@ -1,0 +1,19 @@
+<h1 class="title">学生参照</h1>
+
+<%= form_with url: find_students_path, local: true do |f| %>
+    <div class="container-ad">
+        <p>学生名：<%= f.text_field :student_name %></p>
+        <div>
+            <!-- モーダル部分 -->
+            <div id="known-school-modal" style="display: block">
+                <p>
+                学校：<%= f.collection_select :school_id , @school, :id, :school_name,
+                { include_blank: "選択してください" } %>
+                </p>
+            </div>
+        </div>
+        
+        
+      <%= f.submit '検索', class: "admin-btn" %>
+    </div>
+<% end %>

@@ -4,7 +4,7 @@
     <div class="container-ad">
         <div>
             <!-- モーダル部分 -->
-            <%= f.file_field :file %>
+            <%= f.file_field :file ,class: "" %>
             <div id="known-school-modal" style="display: block;">
                 <p>
                 学校：<%= f.collection_select :school_id , @school || [], :id, :school_name,
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-      <%= f.submit 'インポート' class: "admin-btn" %>
+      <%= f.submit 'インポート', class: "admin-btn" %>
     </div>
 <% end %>
 

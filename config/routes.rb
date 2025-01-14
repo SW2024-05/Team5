@@ -10,8 +10,12 @@ Rails.application.routes.draw do
       post "find_student" , to: "students#find" , as: "find"
     end
   end
-  get 'top/show'
-  post 'top/log'
+  resources :top do
+    collection do
+      get "login",to: "top#login" ,as:"login"
+      post "find",to: "top#find" ,as:"find"
+    end
+  end
   root 'students#search'
 
 end

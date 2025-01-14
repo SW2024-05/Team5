@@ -3,6 +3,7 @@
 set -o errexit
 
 bundle install
+bundle update
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
 

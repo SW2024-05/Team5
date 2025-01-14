@@ -26,7 +26,7 @@ production:
   addapter: postgresql
   encoding: unicode
   pool: 5
-  database: hoge_box
-  username: hoge_box_user
+  database: team5_db
+  username: team5_db_user
   password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>

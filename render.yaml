@@ -1,0 +1,23 @@
+databases:
+  - name: team5_db
+    databaseName: Team5_DB
+    user: team5_db_user
+    plan: free
+
+services:
+  - type: web
+    name: Team5
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: postgresql://team5_db_user:XSdH18e2ZX7igkRIqhCWBSQHpKFQYoi6@dpg-cu3dq59opnds738ispag-a/team5_db
+        fromDatabase:
+          name: Team5
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default

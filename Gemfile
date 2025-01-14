@@ -28,6 +28,7 @@ gem "jbuilder"
 
 gem "pg", "~>1.4",group: :production
 
+gem 'roo'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

@@ -1,11 +1,14 @@
 class FittingsController < ApplicationController
   def edit
     @fitting = Fitting.find(params[:id])
-    @student = Student.find(@fitting.id)
+    @student = Student.find(@fitting.student.id)
+    @product = Product.all
   end
   
   def update
     fitting =Fitting.find(params[:id])
+    student = Student.find(fitting.student.id)
+    student.update(product_id: params[:fitting][:product_id])
     fitting.update(
       height: params[:fitting][:height], weight: params[:fitting][:weight],
       neck_round: params[:fitting][:neck_round], shoulder_width: params[:fitting][:shoulder_width],

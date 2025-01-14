@@ -1,11 +1,23 @@
 <h1 class="title">新規登録</h1>
 
 <p>名前：<%= @student.student_name %></p>
+
 <p>学校：<%= @student.school.school_name %></p>
-<p>制服タイプ：<%= @student.product.product_type %></p>
+<p>制服タイプ：<%= @student.product&.product_type ||='' %></p>
     
 <%= form_with model: @fitting do |f| %>
 
+  <p>
+    制服タイプ： <%= f.collection_select(
+      :product_id,
+      @product,
+      :id,
+      :product_type,
+      { prompt: "選択してください", selected: @student.product&.id }, 
+      { class: "form-select" }
+    ) %>
+  </p>
+  
   <table class="fitting">
     <tr>
       <th><%= f.label :height, '身長' %></th>
@@ -46,5 +58,4 @@
   </table>
   <br/>
   <%= f.submit '登録', class: "admin-btn" %>
-
 <% end %>

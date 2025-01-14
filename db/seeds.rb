@@ -10,3 +10,6 @@
 
 Product.create!(product_type: "I型",price: 15000)
 Product.create!(product_type: "II型",price: 18000)
+School.create!(school_name: "hoge山市立第一中学校", shool_grade: 2)
+School.create!(school_name: "hoge山南中学校", shool_grade: 2)
+School.create!(school_name: "hoge山高校", shool_grade: 3)
